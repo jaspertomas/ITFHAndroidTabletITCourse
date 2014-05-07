@@ -3,26 +3,35 @@ package views.customlist;
 public class CustomListItem 
 	//implements Comparable<CustomListItem>
 {
+	public static final Integer TITLE=0;
 	public static final Integer TEXT=1;
 	public static final Integer IMAGE=2;
 	public static final Integer SLIDESHOW=3;
 	public static final Integer TEXTBOX=4;
 	
+	//use this for slide shows
+	//text means button title
+	public CustomListItem(Integer type, String text, String slideshowprefix) {
+		super();
+		this.type=type;
+		this.text=text;
+		this.slideshowprefix=slideshowprefix;
+	}
+	//use this for plain text 
+	//or for textboxes
+	//the text is the content
 	public CustomListItem(Integer type, String text) {
 		super();
-
 		this.type=type;
-		if(type==TEXT)
-			this.text=text;
+		this.text=text;
 	}
-	public CustomListItem(Integer type, Integer resource_id) {
+	//use this for images
+	//the text is the caption
+	public CustomListItem(Integer type, Integer resource_id, String text) {
 		super();
-
 		this.type=type;
-		if(type==IMAGE)
-			this.resource_id=resource_id;
-//		else if(type.contentEquals("slideshow"))
-//			this.slideshowprefix=array[1];
+		this.text=text;
+		this.resource_id=resource_id;
 	}
 	
 	public Integer getType() {

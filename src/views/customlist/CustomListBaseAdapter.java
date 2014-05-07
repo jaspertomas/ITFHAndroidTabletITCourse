@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -52,6 +53,8 @@ public class CustomListBaseAdapter extends BaseAdapter {
 			holder = new ViewHolder();
 			holder.text = (TextView) convertView.findViewById(R.id.text);
 			holder.image = (ImageView) convertView.findViewById(R.id.image);
+			holder.slideshow = (Button) convertView.findViewById(R.id.slideshow);
+			holder.textbox = (EditText) convertView.findViewById(R.id.textbox);
 
 			
 			
@@ -67,6 +70,8 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		
 		holder.image.setVisibility(TextView.GONE);
 		holder.text.setVisibility(TextView.GONE);
+		holder.slideshow.setVisibility(TextView.GONE);
+		holder.textbox.setVisibility(TextView.GONE);
 
 		CustomListItem item=itemDetailsArrayList.get(position);
 		if(item.getType()==CustomListItem.TEXT)
@@ -78,8 +83,22 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		{
 			holder.image.setVisibility(TextView.VISIBLE);
 			holder.image.setImageResource(item.getResourceId());
+			holder.text.setVisibility(TextView.VISIBLE);
+			holder.text.setText(itemDetailsArrayList.get(position).getText());
 		}
-		
+		else if(item.getType()==CustomListItem.SLIDESHOW)
+		{
+			holder.slideshow.setVisibility(TextView.VISIBLE);
+			holder.slideshow.setText(item.getText());
+			//this is the prefix for the image filenames
+			//stored in a hidden TextView
+			holder.text.setText(item.getSlideshowprefix());
+		}		
+		else if(item.getType()==CustomListItem.TEXTBOX)
+		{
+			holder.textbox.setVisibility(TextView.VISIBLE);
+			holder.textbox.setText(item.getText());
+		}		
         // If CheckBox is toggled, update the planet it is tagged with.  
 //		holder.chkbox.setOnClickListener( new View.OnClickListener() {  
 //          public void onClick(View v) {
@@ -188,6 +207,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		ImageView image;
 		TextView text;
 		EditText textbox;
+		Button slideshow;
 	}
 	private boolean checkboxClickable=true;
 	public void setCheckboxClickable(boolean checkboxClickable) {

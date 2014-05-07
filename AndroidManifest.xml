@@ -26,6 +26,10 @@
             android:name="com.itforhumanity.itcourse_basics.LessonActivity"
             android:label="@string/title_activity_lesson" >
         </activity>
+        <activity
+            android:name="com.itforhumanity.itcourse_basics.SlideShowActivity"
+            android:label="@string/title_activity_slide_show" >
+        </activity>
     </application>
 
 </manifest>

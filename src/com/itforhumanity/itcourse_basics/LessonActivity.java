@@ -34,7 +34,7 @@ public class LessonActivity extends Activity {
 		//List<String> listitems;
         ListView listView = (ListView) findViewById (R.id.list_view);
         
-        listitems = new ArrayList<CustomListItem>();
+        listitems = Lesson1.getLessons();
         
 //		SQLiteDatabase db=MyDatabaseHelper.getInstance().getWritableDatabase();
 //        
@@ -42,11 +42,11 @@ public class LessonActivity extends Activity {
 		//=====read doctors table and add results to listview=======
 		//listitems= new ArrayList<String>(Lessons.list.length);
 
-        for(CustomListItem lesson:Lesson1.getLessons())
-        {
-        	
-        	listitems.add(lesson);
-       	}
+//        for(CustomListItem lesson:Lesson1.getLessons())
+//        {
+//        	
+//        	listitems.add(lesson);
+//       	}
 
         if (listView != null) {
 //            listView.setAdapter(new ArrayAdapter<String>(LessonActivity.this,
