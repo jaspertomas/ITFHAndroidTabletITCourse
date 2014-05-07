@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Lessons;
-import utils.MyDatabaseHelper;
+import utils.MyApplicationContextHolder;
 import android.app.Activity;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -18,14 +17,25 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MenuActivity extends Activity {
-
+	//------------SINGLETON---------------
+	private static MenuActivity instance;
+	public static MenuActivity getInstance()
+	{
+        return instance;
+	}
+	//------------SINGLETON---------------
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 		
+		instance=this;
+		
 		TextView lblName = (TextView) findViewById(R.id.text_view);
 		lblName.setText("Choose a lesson.");
+		
+		MyApplicationContextHolder.setAppContext(this.getApplicationContext());
 		
 		setupView();
 		

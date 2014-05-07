@@ -2,7 +2,9 @@ package views.customlist;
 
 import java.util.ArrayList;
 
+import utils.MyApplicationContextHolder;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,13 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.itforhumanity.itcourse_basics.MenuActivity;
 import com.itforhumanity.itcourse_basics.R;
+import com.itforhumanity.itcourse_basics.SlideShowActivity;
 
 public class CustomListBaseAdapter extends BaseAdapter {
 
@@ -100,15 +106,19 @@ public class CustomListBaseAdapter extends BaseAdapter {
 			holder.textbox.setText(item.getText());
 		}		
         // If CheckBox is toggled, update the planet it is tagged with.  
-//		holder.chkbox.setOnClickListener( new View.OnClickListener() {  
-//          public void onClick(View v) {
+		holder.slideshow.setOnClickListener( new View.OnClickListener() {  
+          public void onClick(View v) {
 //        	context.onTouch();
         	  
-//            CheckBox cb = (CheckBox) v ;  
-//            RelativeLayout layout=(RelativeLayout)v.getParent();
-//            ViewHolder holder=(ViewHolder)layout.getTag();
-//            
-//            //iterate through all choices
+            Button cb = (Button) v ;  
+            LinearLayout layout=(LinearLayout)v.getParent();
+            ViewHolder holder=(ViewHolder)layout.getTag();
+            
+    		Intent intent = new Intent(MenuActivity.getInstance(), SlideShowActivity.class);
+    		//intent.setAction(layout.);
+    		MenuActivity.getInstance().startActivity(intent);
+            
+            //iterate through all choices
 //            for(CustomListItem item:itemDetailsArrayList)
 //            {
 //            	if(item.getUuid().contentEquals(holder.txt_itemUuid.getText().toString()))
@@ -124,9 +134,9 @@ public class CustomListBaseAdapter extends BaseAdapter {
 //            		break;
 //            	}
 //            }
-//            
-//          }  
-//        }); 		
+            
+          }  
+        }); 		
 //
 //		convertView.setOnClickListener( new View.OnClickListener() {  
 //	          public void onClick(View v) {  
