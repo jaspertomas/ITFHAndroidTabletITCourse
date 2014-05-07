@@ -21,16 +21,21 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int alttab=0x7f020000;
+        public static final int enlargefontsize=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080002;
+        public static final int action_settings=0x7f080004;
+        public static final int image=0x7f080002;
         public static final int list_view=0x7f080001;
+        public static final int text=0x7f080003;
         public static final int text_view=0x7f080000;
     }
     public static final class layout {
         public static final int activity_lesson=0x7f030000;
         public static final int activity_menu=0x7f030001;
+        public static final int custom_list_item_view=0x7f030002;
     }
     public static final class menu {
         public static final int lesson=0x7f070000;

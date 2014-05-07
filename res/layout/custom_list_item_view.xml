@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffebee"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<ImageView 
+	    android:visibility="gone"
+		android:id="@+id/image"
+   		android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+		android:paddingRight="15dp"
+		android:paddingTop="10dp" 
+		android:contentDescription=""
+		/>
+	<TextView 
+	    android:visibility="gone"
+	    android:id="@+id/text"
+		android:textSize="20sp" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+ 		android:textColor="#000000" 
+		/>
+	<!--		 
+	<TextView android:id="@+id/puzzle_piece_id" 
+	    android:visibility="gone"
+	    android:layout_width="0dip"
+	    android:layout_height="0dip" 
+	    />-->
+</LinearLayout>
+
+
+<!-- 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+    <CheckBox
+        android:id="@+id/chkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+		 />
+  	<ImageView 
+   		android:id="@+id/photo"
+   		android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+		android:paddingRight="15dp"
+		android:paddingTop="10dp" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent">
+  			<TextView android:id="@+id/name"
+			android:textSize="14sp" 
+			android:textStyle="bold" 
+			android:textColor="#FFFF00" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			 />
+		<TextView android:id="@+id/itemDescription"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			 />
+		<TextView android:id="@+id/price" 
+			android:textSize="19sp" 
+			android:textStyle="bold" 
+			android:textColor="#32cd32" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			/>
+	</LinearLayout>
+		
+</LinearLayout>
+
+ -->
