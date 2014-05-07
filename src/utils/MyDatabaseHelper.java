@@ -1,7 +1,5 @@
 package utils;
 
-import models.Tests;
-import models.Users;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -25,8 +23,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase database) {
-		database.execSQL(Users.createTable());		
-		database.execSQL(Tests.createTable());		
+		//database.execSQL(Users.createTable());		
+		//database.execSQL(Tests.createTable());		
 	}
 
 	@Override
