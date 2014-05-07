@@ -117,24 +117,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
     		Intent intent = new Intent(MenuActivity.getInstance(), SlideShowActivity.class);
     		intent.setAction((String) holder.text.getText());
     		MenuActivity.getInstance().startActivity(intent);
-            
-            //iterate through all choices
-//            for(CustomListItem item:itemDetailsArrayList)
-//            {
-//            	if(item.getUuid().contentEquals(holder.txt_itemUuid.getText().toString()))
-//            	{
-//            		if(!checkboxClickable)
-//                		//for use by ContentMenuActivity
-//            			//checks used to indicate that content has been played previously
-//            			cb.setChecked(false);
-//            		else
-//                		//for use by CreateTrackActivity
-//            			//checks used to indicate that user has selected content
-//            			item.setChecked(true);
-//            		break;
-//            	}
-//            }
-            
+
           }  
         }); 		
 //
