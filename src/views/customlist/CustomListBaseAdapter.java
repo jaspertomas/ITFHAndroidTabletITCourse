@@ -115,7 +115,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
             ViewHolder holder=(ViewHolder)layout.getTag();
             
     		Intent intent = new Intent(MenuActivity.getInstance(), SlideShowActivity.class);
-    		//intent.setAction(layout.);
+    		intent.setAction((String) holder.text.getText());
     		MenuActivity.getInstance().startActivity(intent);
             
             //iterate through all choices

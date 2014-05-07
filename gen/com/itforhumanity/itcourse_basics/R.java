@@ -38,10 +38,10 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080006;
-        public static final int image=0x7f080002;
+        public static final int image=0x7f080003;
         public static final int list_view=0x7f080001;
         public static final int slideshow=0x7f080005;
-        public static final int text=0x7f080003;
+        public static final int text=0x7f080002;
         public static final int text_view=0x7f080000;
         public static final int textbox=0x7f080004;
     }

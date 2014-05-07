@@ -3,6 +3,7 @@ package com.itforhumanity.itcourse_basics;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class SlideShowActivity extends Activity {
 
@@ -10,6 +11,10 @@ public class SlideShowActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_slide_show);
+
+		TextView text = (TextView) findViewById(R.id.text);
+		text.setText(this.getIntent().getAction());
+	
 	}
 
 	@Override
