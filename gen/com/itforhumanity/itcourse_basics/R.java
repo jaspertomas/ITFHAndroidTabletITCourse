@@ -48,9 +48,11 @@ public final class R {
         public static final int l01s01keyboard1=0x7f020018;
         public static final int l01s01layout1=0x7f020019;
         public static final int l01s01layout2=0x7f02001a;
-        public static final int l01s01select=0x7f02001b;
-        public static final int l01s01separatepower=0x7f02001c;
-        public static final int texteditborder=0x7f02001d;
+        public static final int l01s01paste=0x7f02001b;
+        public static final int l01s01select=0x7f02001c;
+        public static final int l01s01selectmenu=0x7f02001d;
+        public static final int l01s01separatepower=0x7f02001e;
+        public static final int texteditborder=0x7f02001f;
     }
     public static final class id {
         public static final int action_settings=0x7f080012;
