@@ -29,18 +29,14 @@ public final class R {
         public static final int l00s00p03=0x7f020005;
         public static final int l00s00p04=0x7f020006;
         public static final int l00s00p05=0x7f020007;
-        public static final int l00s00p06=0x7f020008;
-        public static final int l00s00p07=0x7f020009;
-        public static final int l00s00p08=0x7f02000a;
-        public static final int l00s00p09=0x7f02000b;
-        public static final int l00s00p10=0x7f02000c;
-        public static final int texteditborder=0x7f02000d;
+        public static final int texteditborder=0x7f020008;
     }
     public static final class id {
         public static final int action_settings=0x7f080009;
         public static final int image=0x7f080005;
         public static final int imageView=0x7f080004;
         public static final int list_view=0x7f080001;
+        public static final int menu_back=0x7f08000a;
         public static final int slideshow=0x7f080008;
         public static final int slideshow_layout=0x7f080002;
         public static final int text=0x7f080006;
@@ -62,6 +58,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int back=0x7f050005;
         public static final int hello_world=0x7f050002;
         public static final int title_activity_lesson=0x7f050003;
         public static final int title_activity_slide_show=0x7f050004;

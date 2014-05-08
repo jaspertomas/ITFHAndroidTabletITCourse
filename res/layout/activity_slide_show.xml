@@ -9,15 +9,18 @@
   android:id="@+id/slideshow_layout"
   >
 
-    <TextView android:text="10"
+    <TextView android:text="0"
               android:id="@+id/textView1"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content"></TextView>
-   <ImageView android:id="@+id/imageView"
-              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginTop="80px"
-              android:layout_marginLeft="65px"
+			  android:textSize="40sp" 
+              ></TextView>
+   <ImageView android:id="@+id/imageView"
+              android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="1"
+              android:layout_marginTop="20dp"
+              android:layout_marginBottom="20dp"
               ></ImageView>
 
              

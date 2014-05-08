@@ -1,11 +1,11 @@
 package com.itforhumanity.itcourse_basics;
 
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,10 +33,8 @@ public class SlideShowActivity extends Activity {
         
         for (int j = 0; j < slidecount; j++) {
         	   imgid[j]=getResources()
- 	                  .getIdentifier(imgprefix+String.format("%02d", j), "drawable", getPackageName());
+ 	                  .getIdentifier(imgprefix+String.format("%02d", j+1), "drawable", getPackageName());
         }
-        
-        
         updateUI();
 		
 	}
@@ -69,16 +67,37 @@ public class SlideShowActivity extends Activity {
         }
     };
     public void updateUI(){
-        int currentInt=Integer.parseInt((String)txtStatus.getText())+10;
-        if(currentInt<=100){
-            refreshHandler.sleep(2000);
-            txtStatus.setText(String.valueOf(currentInt));
-            if(i<imgid.length){
-                imageView.setImageResource(imgid[i]);
-                
-                // imageView.setPadding(left, top, right, bottom);
-                i++;
-            }
+        refreshHandler.sleep(2000);
+        imageView.setImageResource(imgid[i]);
+        txtStatus.setText(String.valueOf(i+1));
+        if(i+1<imgid.length){
+            // imageView.setPadding(left, top, right, bottom);
+            i++;
+        }
+        else
+        {
+        	i=0;
         }
     }
+
+
+
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.action_settings, menu);
+//		return true;
+//	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.menu_back:
+			finish();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
 }

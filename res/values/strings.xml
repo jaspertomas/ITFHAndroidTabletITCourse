@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_lesson">LessonActivity</string>
     <string name="title_activity_slide_show">SlideShowActivity</string>
-
+    <string name="back">Back</string>
+    
 </resources>
