@@ -9,6 +9,7 @@ import views.customlist.CustomListItem;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 public class LessonActivity extends Activity {
@@ -76,5 +77,17 @@ public class LessonActivity extends Activity {
         
         }	   
 	
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.menu_back:
+			finish();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 }
