@@ -8,20 +8,117 @@
   android:orientation="vertical"
   android:id="@+id/slideshow_layout"
   >
+  	<!-- top row -->
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="wrap_content"
+	  android:orientation="horizontal"
+	  android:id="@+id/slideshow_layout"
+	  >
+		    <TextView android:text="0"
+		              android:id="@+id/title"
+		              android:layout_width="0dp"
+		              android:layout_weight="1"
+		              android:layout_height="wrap_content"
+					  android:textSize="30sp" 
+		              ></TextView>
+   		    <TextView android:text="0"
+		              android:id="@+id/slidecounter"
+		              android:layout_width="0dp"
+		              android:layout_weight="1"
+		              android:layout_height="wrap_content"
+					  android:textSize="30sp" 
+					  android:gravity="right"
+		              ></TextView>
+	    	  
+	</LinearLayout>
+	
+  	<!-- bottom row -->
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="0dp"
+	  android:layout_weight="1"
+	  android:orientation="horizontal"
+	  android:id="@+id/slideshow_layout"
+	  >
+  		<!-- bottom left -->
+	    		    	  
+    	<LinearLayout
+		  android:layout_width="wrap_content"
+		  android:layout_height="match_parent"
+		  android:orientation="vertical"
+		  android:id="@+id/slideshow_layout"
+		  android:gravity="center"
+		  >
+		    <Button
+		        android:id="@+id/play"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Play" 
+		        android:onClick="play"
+		        />			
+		    <Button
+		        android:id="@+id/stop"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Stop" 
+		        android:onClick="stop"
+		        />	
+		    <Button
+		        android:id="@+id/first"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="First" 
+		        android:onClick="first"
+		        />			
+		    <Button
+		        android:id="@+id/previous"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Previous" 
+		        android:onClick="previous"
+		        />			
+		    <Button
+		        android:id="@+id/next"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Next" 
+		        android:onClick="next"
+		        />			
+		    <Button
+		        android:id="@+id/last"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Last" 
+		        android:onClick="last"
+		        />			
+		    <Button
+		        android:id="@+id/exit"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Exit" 
+		        android:onClick="exit"
+		        />			    
+		
+		             
+		</LinearLayout>
 
-    <TextView android:text="0"
-              android:id="@+id/textView1"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-			  android:textSize="40sp" 
-              ></TextView>
-   <ImageView android:id="@+id/imageView"
-              android:layout_width="fill_parent"
-              android:layout_height="0dp"
-              android:layout_weight="1"
-              android:layout_marginTop="20dp"
-              android:layout_marginBottom="20dp"
-              ></ImageView>
-
-             
+   		<!-- bottom right -->		
+    	<LinearLayout
+		  android:layout_width="0dp"
+		  android:layout_weight="1"
+		  android:layout_height="match_parent"
+		  android:orientation="vertical"
+		  android:id="@+id/slideshow_layout"
+		  >
+		
+		   <ImageView android:id="@+id/imageView"
+		              android:layout_width="fill_parent"
+		              android:layout_height="fill_parent"
+		              ></ImageView>
+		
+		             
+		</LinearLayout>
+	</LinearLayout>
 </LinearLayout>
+			

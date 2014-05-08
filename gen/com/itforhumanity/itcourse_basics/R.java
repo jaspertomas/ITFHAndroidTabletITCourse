@@ -32,17 +32,25 @@ public final class R {
         public static final int texteditborder=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
-        public static final int image=0x7f080005;
-        public static final int imageView=0x7f080004;
+        public static final int action_settings=0x7f080011;
+        public static final int exit=0x7f08000b;
+        public static final int first=0x7f080007;
+        public static final int image=0x7f08000d;
+        public static final int imageView=0x7f08000c;
+        public static final int last=0x7f08000a;
         public static final int list_view=0x7f080001;
-        public static final int menu_back=0x7f08000a;
-        public static final int slideshow=0x7f080008;
+        public static final int menu_back=0x7f080012;
+        public static final int next=0x7f080009;
+        public static final int play=0x7f080005;
+        public static final int previous=0x7f080008;
+        public static final int slidecounter=0x7f080004;
+        public static final int slideshow=0x7f080010;
         public static final int slideshow_layout=0x7f080002;
-        public static final int text=0x7f080006;
-        public static final int textView1=0x7f080003;
+        public static final int stop=0x7f080006;
+        public static final int text=0x7f08000e;
         public static final int text_view=0x7f080000;
-        public static final int textbox=0x7f080007;
+        public static final int textbox=0x7f08000f;
+        public static final int title=0x7f080003;
     }
     public static final class layout {
         public static final int activity_lesson=0x7f030000;

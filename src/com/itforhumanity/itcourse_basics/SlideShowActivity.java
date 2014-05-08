@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +20,10 @@ public class SlideShowActivity extends Activity {
 //		TextView text = (TextView) findViewById(R.id.text);
 //		text.setText(this.getIntent().getAction());
 	
-        this.txtStatus=(TextView)this.findViewById(R.id.textView1);
+        this.txtTitle=(TextView)this.findViewById(R.id.title);
+        txtTitle.setText(" "+this.getIntent().getType());
+        
+        this.txtSlideCounter=(TextView)this.findViewById(R.id.slidecounter);
         this.imageView=(ImageView)this.findViewById(R.id.imageView);
 
         String imgprefix=this.getIntent().getAction();
@@ -47,7 +51,7 @@ public class SlideShowActivity extends Activity {
 	}
 
 	
-    private TextView txtStatus;
+    private TextView txtSlideCounter,txtTitle;
     private ImageView imageView;
     int i=0;
     Integer[] imgid;
@@ -77,7 +81,7 @@ public class SlideShowActivity extends Activity {
             refreshHandler.sleep(2000);
         }
     	imageView.setImageResource(imgid[i]);
-        txtStatus.setText(String.valueOf(i+1));
+        txtSlideCounter.setText("Slide "+String.valueOf(i+1)+" ");
         if(i+1<imgid.length){
             // imageView.setPadding(left, top, right, bottom);
             i++;
@@ -107,5 +111,9 @@ public class SlideShowActivity extends Activity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+	public void exit(View view)
+	{
+		finish();
 	}
 }

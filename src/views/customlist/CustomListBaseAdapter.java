@@ -57,6 +57,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		if (convertView == null) {
 			convertView = l_Inflater.inflate(R.layout.custom_list_item_view, null);
 			holder = new ViewHolder();
+			holder.title = (TextView) convertView.findViewById(R.id.title);
 			holder.text = (TextView) convertView.findViewById(R.id.text);
 			holder.image = (ImageView) convertView.findViewById(R.id.image);
 			holder.slideshow = (Button) convertView.findViewById(R.id.slideshow);
@@ -74,6 +75,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
 //			holder.chkbox.setFocusable(false);
 //		}
 		
+		holder.title.setVisibility(TextView.GONE);
 		holder.image.setVisibility(TextView.GONE);
 		holder.text.setVisibility(TextView.GONE);
 		holder.slideshow.setVisibility(TextView.GONE);
@@ -84,6 +86,11 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		{
 			holder.text.setVisibility(TextView.VISIBLE);
 			holder.text.setText(itemDetailsArrayList.get(position).getText());
+		}
+		else if(item.getType()==CustomListItem.TITLE)
+		{
+			holder.title.setVisibility(TextView.VISIBLE);
+			holder.title.setText(itemDetailsArrayList.get(position).getText());
 		}
 		else if(item.getType()==CustomListItem.IMAGE)
 		{
@@ -98,6 +105,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
 			holder.slideshow.setText(item.getText());
 			//this is the prefix for the image filenames
 			//stored in a hidden TextView
+			holder.title.setText(item.getText());
 			holder.text.setText(item.getSlideshowprefix());
 		}		
 		else if(item.getType()==CustomListItem.TEXTBOX)
@@ -115,6 +123,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
             ViewHolder holder=(ViewHolder)layout.getTag();
             
     		Intent intent = new Intent(MenuActivity.getInstance(), SlideShowActivity.class);
+	        intent.setType(holder.title.getText().toString());
     		intent.setAction((String) holder.text.getText());
     		MenuActivity.getInstance().startActivity(intent);
 
@@ -197,6 +206,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
 	}
 
 	static class ViewHolder {
+		TextView title;
 		ImageView image;
 		TextView text;
 		EditText textbox;
