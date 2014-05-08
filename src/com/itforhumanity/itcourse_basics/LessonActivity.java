@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Lesson1;
+import models.Lessons;
 import views.customlist.CustomListBaseAdapter;
 import views.customlist.CustomListItem;
 import android.app.Activity;
@@ -35,7 +36,8 @@ public class LessonActivity extends Activity {
 		//List<String> listitems;
         ListView listView = (ListView) findViewById (R.id.list_view);
         
-        listitems = Lesson1.getLessons();
+        String lessonname=this.getIntent().getAction();
+        listitems = Lessons.getLesson(lessonname);
         
 //		SQLiteDatabase db=MyDatabaseHelper.getInstance().getWritableDatabase();
 //        

@@ -1,6 +1,9 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import views.customlist.CustomListItem;
 
 /*
  * From http://www.azlyrics.com/j/jackson.html
@@ -9,10 +12,10 @@ import java.util.HashMap;
 public class Lessons {
 	public static String[][] list=
 		{
-			{"How to use this tutorial","0",},
-			{"File Management","1",},
-			{"Text Editing","2",},
-			{"Introduction to HTML","3",},
+			{"How to use this tutorial","1",},
+			{"File Management","2",},
+			{"Text Editing","3",},
+			{"Introduction to HTML","4",},
 		};
 	private static HashMap<String,String> map=new HashMap<String,String>();
 	public static HashMap<String,String> getMap()
@@ -30,11 +33,27 @@ public class Lessons {
 			map.put(pair[0], pair[1]);
 		}
 	}
-	public static void main(String args[])
+	private static ArrayList<CustomListItem> getLesson(Integer lesson_id)
 	{
-		
-		System.out.println(list[1][1]);
+		switch(lesson_id)
+		{
+			case 1: return Lesson1.getLessons();
+			default:return new ArrayList<CustomListItem>();
+		}
 	}
+	public static Integer getLessonId(String name)
+	{
+		for(String[] lesson:list)
+		{
+			if(lesson[0].contentEquals(name))return Integer.parseInt(lesson[1]);
+		}
+		return null;
+	}
+	public static ArrayList<CustomListItem> getLesson(String name)
+	{
+		return getLesson(getLessonId( name));
+	}
+
 	
 	
 }
