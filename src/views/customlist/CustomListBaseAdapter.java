@@ -2,9 +2,9 @@ package views.customlist;
 
 import java.util.ArrayList;
 
-import utils.MyApplicationContextHolder;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.itforhumanity.itcourse_basics.MenuActivity;
@@ -85,124 +84,79 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		if(item.getType()==CustomListItem.TEXT)
 		{
 			holder.text.setVisibility(TextView.VISIBLE);
-			holder.text.setText(itemDetailsArrayList.get(position).getText());
+			holder.text.setText(item.getText());
 		}
 		else if(item.getType()==CustomListItem.TITLE)
 		{
 			holder.title.setVisibility(TextView.VISIBLE);
-			holder.title.setText(itemDetailsArrayList.get(position).getText());
+			holder.title.setText(item.getText());
 		}
 		else if(item.getType()==CustomListItem.IMAGE)
 		{
 			holder.image.setVisibility(TextView.VISIBLE);
 			holder.image.setImageResource(item.getResourceId());
 			holder.text.setVisibility(TextView.VISIBLE);
-			holder.text.setText(itemDetailsArrayList.get(position).getText());
+			holder.text.setText(item.getText());
 		}
 		else if(item.getType()==CustomListItem.SLIDESHOW)
 		{
 			holder.slideshow.setVisibility(TextView.VISIBLE);
-			holder.slideshow.setText(item.getText());
-			//this is the prefix for the image filenames
-			//stored in a hidden TextView
+			holder.slideshow.setText("Slide Show: "+item.getText());
+
+			//this is the title
 			holder.title.setText(item.getText());
-			holder.text.setText(item.getSlideshowprefix());
+
+			//this is the prefix for the image filenames
+			holder.text.setText(item.getParameter());
+
+	        // If CheckBox is toggled, update the planet it is tagged with.  
+			holder.slideshow.setOnClickListener( new View.OnClickListener() {  
+	          public void onClick(View v) {
+//	        	context.onTouch();
+	        	  
+	            Button cb = (Button) v ;  
+	            LinearLayout layout=(LinearLayout)v.getParent();
+	            ViewHolder holder=(ViewHolder)layout.getTag();
+	            
+	    		Intent intent = new Intent(MenuActivity.getInstance(), SlideShowActivity.class);
+		        intent.setType(holder.title.getText().toString());
+	    		intent.setAction((String) holder.text.getText());
+	    		MenuActivity.getInstance().startActivity(intent);
+
+	          }  
+	        }); 		
 		}		
 		else if(item.getType()==CustomListItem.TEXTBOX)
 		{
 			holder.textbox.setVisibility(TextView.VISIBLE);
 			holder.textbox.setText(item.getText());
-		}		
-        // If CheckBox is toggled, update the planet it is tagged with.  
-		holder.slideshow.setOnClickListener( new View.OnClickListener() {  
-          public void onClick(View v) {
-//        	context.onTouch();
-        	  
-            Button cb = (Button) v ;  
-            LinearLayout layout=(LinearLayout)v.getParent();
-            ViewHolder holder=(ViewHolder)layout.getTag();
-            
-    		Intent intent = new Intent(MenuActivity.getInstance(), SlideShowActivity.class);
-	        intent.setType(holder.title.getText().toString());
-    		intent.setAction((String) holder.text.getText());
-    		MenuActivity.getInstance().startActivity(intent);
 
-          }  
-        }); 		
-//
-//		convertView.setOnClickListener( new View.OnClickListener() {  
-//	          public void onClick(View v) {  
-//	        	  	context.onTouch();
-//
-//	        	  
-//	        	    //for use by ContentMenuActivity
-//          			if(!checkboxClickable)
-//          			{
-//          	            RelativeLayout layout=(RelativeLayout)v;
-//          	            ViewHolder holder=(ViewHolder)layout.getTag();
-////          				Log.e("hi",holder.txt_itemName.getText().toString());
-//          	            //play content according to content type
-//          	            String type=holder.txt_itemType.getText().toString();
-//          	            String description=holder.txt_itemDescription.getText().toString();
-//          	            String uuid=holder.txt_itemUuid.getText().toString();
-//          	            String puzzle_piece_id=holder.txt_itemPuzzlePieceId.getText().toString();
-//          	            if(type.contentEquals("brandvideo") || type.contentEquals("advocacyvideo"))
-//          	            {
-//          	            	Video video=Videos.getById(uuid);
-//          	            	if(video!=null)
-//          	            	{
-//              	            	ContentMenuActivity.getInstance().playVideo(video,type,puzzle_piece_id);
-//          	            	}
-//          	            	else
-//          	            	{
-//          	            		Log.e("CustomListBaseAdapter","Error playing video "+description);
-//          	            	}
-//          	            }
-////          	            else
-////          	            if(type.contentEquals("brochure"))
-////          	            {
-////          	            	ContentMenuActivity.getInstance().playBrochure(PuzzlePieces.getById(uuid));
-////          	            }
-//          	            else
-//          	            if(type.contentEquals("app"))
-//          	            {
-//          	            	ContentMenuActivity.getInstance().playApp(Apps.getById(puzzle_piece_id));
-//          	            }
-//          	            else
-//          	  			if(type.contentEquals("BrochureContent"))
-//        	            {
-//        	            	ContentMenuActivity.getInstance().playBrochureContent(Contents.getById(uuid));
-//        	            }
-//          	  			else
-//          	  			if(type.contentEquals("ApkContent"))
-//            	            {
-//            	            	ContentMenuActivity.getInstance().playAppContent(Contents.getById(uuid));
-//            	            }
-//          	  			else
-//          	  			if(
-//          	  					//videocontent backward compatibility
-//          	  					type.contentEquals("VideoContent")
-//          	  					||
-//          	  					type.contentEquals("BrandVideoContent")
-//          	  					||
-//          	  					type.contentEquals("AdvocacyVideoContent")
-//      	  					)
-//        	            {
-//          	            	ContentMenuActivity.getInstance().playVideoContent(Contents.getById(uuid),type);
-//        	            }
-//          	  			else
-//          	  			if(type.contentEquals("ImageContent"))
-//        	            {
-//        	            	//ContentMenuActivity.getInstance().playAppContent(Contents.getById(uuid));
-//          	  				ContentMenuActivity.getInstance().playImageContent(Contents.getById(uuid));
-//      	  				
-//        	            }
-//      	            }
-//	  	        }  
-//	        }); 		
-//		
-		
+			//these are the dimensions of the textbox
+			holder.text.setText(item.getParameter());
+			
+			String[] options=item.getParameter().split(",");
+			parseDimensions( options[0]);
+			parseDimensions( options[1]);
+			
+			holder.textbox.setLayoutParams(new LinearLayout.LayoutParams(width, height));			
+			//holder.textbox.setLayoutParams(new LinearLayout.LayoutParams(width, height));			
+			
+		}	
+		else if(item.getType()==CustomListItem.SPACER)
+		{
+			holder.text.setVisibility(TextView.VISIBLE);
+			holder.text.setText("\n");
+		}		
 		return convertView;
+	}
+	private Integer width=0,height=0;
+	private void parseDimensions(String param)
+	{
+		String[] segments=param.split("=");
+		if(segments[0].contentEquals("h"))
+			height=Integer.parseInt(segments[1]);
+		else if(segments[0].contentEquals("w"))
+			width=Integer.parseInt(segments[1]);
 	}
 
 	static class ViewHolder {

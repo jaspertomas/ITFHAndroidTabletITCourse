@@ -8,17 +8,24 @@ public class CustomListItem
 	public static final Integer IMAGE=2;
 	public static final Integer SLIDESHOW=3;
 	public static final Integer TEXTBOX=4;
-	
+	public static final Integer SPACER=5;
+
+	//use this for spacers
+	public CustomListItem(Integer type) {
+		super();
+		this.type=type;
+	}	
 	//use this for slide shows
-	//text means button title
+	//text means title
+	//or for textboxes
+	//slideshowprefix means dimensions
 	public CustomListItem(Integer type, String text, String slideshowprefix) {
 		super();
 		this.type=type;
 		this.text=text;
-		this.slideshowprefix=slideshowprefix;
+		this.parameter=slideshowprefix;
 	}
 	//use this for plain text 
-	//or for textboxes
 	//the text is the content
 	public CustomListItem(Integer type, String text) {
 		super();
@@ -57,18 +64,18 @@ public class CustomListItem
 		this.resource_id = resource_id;
 	}
 
-	public String getSlideshowprefix() {
-		return slideshowprefix;
+	public String getParameter() {
+		return parameter;
 	}
 
-	public void setSlideshowprefix(String slideshowprefix) {
-		this.slideshowprefix = slideshowprefix;
+	public void setParameter(String parameter) {
+		this.parameter = parameter;
 	}
 
 	private Integer type ;
 	private String text ;
 	private Integer resource_id ;
-	private String slideshowprefix ;
+	private String parameter ;
 
 
 	

@@ -30,7 +30,8 @@ public class Lesson1 {
 					"\n" + 
 					"Mozilla Firefox Browser for Android is recommended. "));
 		list.add(new CustomListItem(CustomListItem.IMAGE,R.drawable.alttab,"This is a picture"));
-		list.add(new CustomListItem(CustomListItem.TEXTBOX,"hello world!"));
+		//list.add(new CustomListItem(CustomListItem.SPACER));
+		list.add(new CustomListItem(CustomListItem.TEXTBOX,"hello world!","h=100,w=400"));
 		list.add(new CustomListItem(CustomListItem.SLIDESHOW, "Slide Show 1","l00s00p05"));
 		
 		
