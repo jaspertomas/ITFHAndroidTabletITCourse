@@ -12,10 +12,11 @@ import views.customlist.CustomListItem;
 public class Lessons {
 	public static String[][] list=
 		{
-			{"How to use this tutorial","1",},
-			{"File Management","2",},
-			{"Text Editing","3",},
-			{"Introduction to HTML","4",},
+			{"1.1: What is IT for Humanity Android Tablet IT Course","1",},
+			{"1.2: Some friendly reminders","2",},
+			{"2.1: File Management","3",},
+			{"3.1: Text Editing","4",},
+			{"4.1: Introduction to HTML","5",},
 		};
 	private static HashMap<String,String> map=new HashMap<String,String>();
 	public static HashMap<String,String> getMap()
@@ -37,7 +38,8 @@ public class Lessons {
 	{
 		switch(lesson_id)
 		{
-			case 1: return Lesson1.getLessons();
+			case 1: return L1S1.getLessons();
+			case 2: return L1S2.getLessons();
 			default:return new ArrayList<CustomListItem>();
 		}
 	}

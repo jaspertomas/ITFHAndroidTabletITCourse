@@ -3,7 +3,7 @@ package com.itforhumanity.itcourse_basics;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Lesson1;
+import models.L1S1;
 import models.Lessons;
 import views.customlist.CustomListBaseAdapter;
 import views.customlist.CustomListItem;
@@ -30,14 +30,17 @@ public class LessonActivity extends Activity {
 		return true;
 	}
 	ArrayList<CustomListItem> listitems;
+	String lessonname;
 	private void setupView()
 	{
 		
 		//List<String> listitems;
         ListView listView = (ListView) findViewById (R.id.list_view);
         
-        String lessonname=this.getIntent().getAction();
-        listitems = Lessons.getLesson(lessonname);
+        lessonname=this.getIntent().getAction();
+        listitems = new ArrayList<CustomListItem>();
+        listitems.add(new CustomListItem(CustomListItem.TITLE,lessonname));
+		listitems.addAll(Lessons.getLesson(lessonname));
         
 //		SQLiteDatabase db=MyDatabaseHelper.getInstance().getWritableDatabase();
 //        
