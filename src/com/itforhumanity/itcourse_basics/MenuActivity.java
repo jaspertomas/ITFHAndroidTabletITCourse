@@ -66,10 +66,10 @@ public class MenuActivity extends Activity {
 		//=====read doctors table and add results to listview=======
 		listitems= new ArrayList<String>(Lessons.list.length);
 
-        for(String[] lesson:Lessons.list)
+        for(String lesson:Lessons.list)
         {
         	
-        	listitems.add(lesson[0]);
+        	listitems.add(lesson);
        	}
 
         if (listView != null) {

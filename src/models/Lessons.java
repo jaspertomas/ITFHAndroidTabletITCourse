@@ -10,34 +10,18 @@ import views.customlist.CustomListItem;
  * */
 
 public class Lessons {
-	public static String[][] list=
+	public static String[] list=
 		{
-			{L1S1.title},
-			{L1S2.title},
-			{"2.1: File Management","3",},
-			{"3.1: Text Editing","4",},
-			{"4.1: Introduction to HTML","5",},
+			L1S1.title,
+			L1S2.title,
+			L1S3.title,
 		};
 	public static ArrayList<CustomListItem> getLesson(String name)
 	{
 		if(name.contentEquals(L1S1.title))return L1S1.getLessons();
 		else if(name.contentEquals(L1S2.title))return L1S2.getLessons();
+		else if(name.contentEquals(L1S3.title))return L1S3.getLessons();
 		else return new ArrayList<CustomListItem>();
 	}	
-	private static HashMap<String,String> map=new HashMap<String,String>();
-	public static HashMap<String,String> getMap()
-	{
-		if(map.size()==0)
-		{
-			init();
-		}
-		return map;
-	}
-	private static void init()
-	{
-		for(String[] pair:list)
-		{
-			map.put(pair[0], pair[1]);
-		}
-	}
+
 }

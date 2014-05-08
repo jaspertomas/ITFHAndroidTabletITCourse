@@ -12,8 +12,7 @@ import com.itforhumanity.itcourse_basics.R;
  * From http://www.azlyrics.com/j/jackson.html
  * */
 
-public class L1S1 extends Lesson{
-	public static final String prefix="1.1";
+public class L1S1{
 	public static final String title="1.1: Introducing the IT for Humanity Android Tablet IT Course";
 	
 	private static ArrayList<CustomListItem> list=null;
@@ -40,7 +39,7 @@ public class L1S1 extends Lesson{
 				"A flash disk may be inserted into the hub, to transfer files to and from other devices.\n" + 
 				"See Lesson 1 on how to access the flash disk. "));
 		
-		list.add(new CustomListItem(CustomListItem.SPACER));
+		//list.add(new CustomListItem(CustomListItem.SPACER));
 		list.add(new CustomListItem(CustomListItem.TITLE,"Choosing a Tablet"));
 		list.add(new CustomListItem(CustomListItem.TEXT," Any tablet will do, as long as its Android version is Jellybean (Android 4.0) or higher. I recommend a tablet with a separate power adapter port (besides the microusb port), so you can use your keyboard and charge your tablet at the same time. If not, you might have to stop studying to charge your tablet every few hours. "));
 		list.add(new CustomListItem(CustomListItem.IMAGE,R.drawable.l01s01separatepower,""));
