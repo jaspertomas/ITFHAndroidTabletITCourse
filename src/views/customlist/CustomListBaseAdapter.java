@@ -109,19 +109,25 @@ public class CustomListBaseAdapter extends BaseAdapter {
 			holder.image.setVisibility(TextView.VISIBLE);
 			
             Drawable image = MenuActivity.getInstance().getResources().getDrawable(item.getResourceId());
-//            float heighToWidthRatio = image.getIntrinsicWidth()/image.getIntrinsicHeight();
-//            int height = screenheight;
-//
-//            holder.image.setLayoutParams(
-//                    new LayoutParams(
-//                            (int) (height * heighToWidthRatio), height));			
+            float heighToWidthRatio = image.getIntrinsicWidth()/image.getIntrinsicHeight();
+            int height = Double.valueOf(0.9d*screenheight).intValue();
 
             Double widthToHeightRatio = Double.valueOf(image.getIntrinsicHeight())/image.getIntrinsicWidth();
-            int width = screenwidth;
+            int width = Double.valueOf(0.9d*screenwidth).intValue();
+            
+            if((width * widthToHeightRatio)<height)
+            {
+            	holder.image.setLayoutParams(
+                        new LayoutParams(
+                        		width, (int) (width * widthToHeightRatio)));			
+            }
+            else
+            {
+                holder.image.setLayoutParams(
+                        new LayoutParams(
+                                (int) (height * heighToWidthRatio), height));			
+            }
 
-            holder.image.setLayoutParams(
-                    new LayoutParams(
-                    		width, (int) (width * widthToHeightRatio)));			
             
             
 			holder.image.setImageDrawable(image);
