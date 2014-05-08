@@ -115,7 +115,7 @@ public class CustomListBaseAdapter extends BaseAdapter {
             holder.image.setLayoutParams(
                     new LayoutParams(
                             (int) (height * heighToWidthRatio), height));			
-			
+
 			holder.image.setImageDrawable(image);
 			holder.text.setVisibility(TextView.VISIBLE);
 			holder.text.setText(item.getText());
