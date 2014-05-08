@@ -40,7 +40,7 @@ public class L1S3 {
 				"\n" + 
 				"One way to press Ctrl-A is this. Press, and don't let go of, the Right Ctrl key with your right hand. Then press and let go of the A key with your left hand. Then let go of the Ctrl key. Notice that the words in the box will turn orange. This means that you have successfully selected the words in the box. "));
 
-		//list.add(new CustomListItem(CustomListItem.SLIDESHOW, "Slide Show 1","l00s00p05"));
+		list.add(new CustomListItem(CustomListItem.SLIDESHOW, "Slide Show 1","l01s01a01p08"));
 		list.add(new CustomListItem(CustomListItem.TEXT,"\n" + 
 				"\n" + 
 				"Another way to press Ctrl-A is to press and hold down the Left Ctrl key with your left little finger, then press the A key with your left ring or middle finger. Try both methods and see which one you are more comfortable with. "));
