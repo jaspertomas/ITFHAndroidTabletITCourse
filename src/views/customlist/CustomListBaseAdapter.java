@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.itforhumanity.itcourse_basics.MenuActivity;
@@ -32,11 +35,20 @@ public class CustomListBaseAdapter extends BaseAdapter {
 	
 	private LayoutInflater l_Inflater;
 
-//	TimedActivity context;
+	int screenwidth;
+	int screenheight;			
 	public CustomListBaseAdapter(Context context, ArrayList<CustomListItem> results) {
 //		this.context=(TimedActivity)context;
 		itemDetailsArrayList = results;
 		l_Inflater = LayoutInflater.from(context);
+		
+		
+		Display display = MenuActivity.getInstance().getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		screenwidth = size.x;
+		screenheight = size.y;			
+		
 	}
 
 	public int getCount() {
@@ -93,8 +105,18 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		}
 		else if(item.getType()==CustomListItem.IMAGE)
 		{
+			//holder.image
 			holder.image.setVisibility(TextView.VISIBLE);
-			holder.image.setImageResource(item.getResourceId());
+			
+            Drawable image = MenuActivity.getInstance().getResources().getDrawable(item.getResourceId());
+            float heighToWidthRatio = image.getIntrinsicWidth()/image.getIntrinsicHeight();
+            int height = screenheight;
+
+            holder.image.setLayoutParams(
+                    new LayoutParams(
+                            (int) (height * heighToWidthRatio), height));			
+			
+			holder.image.setImageDrawable(image);
 			holder.text.setVisibility(TextView.VISIBLE);
 			holder.text.setText(item.getText());
 		}
