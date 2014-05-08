@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,8 +18,8 @@ public class SlideShowActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_slide_show);
 
-//		TextView text = (TextView) findViewById(R.id.text);
-//		text.setText(this.getIntent().getAction());
+        this.txtStatus=(TextView)this.findViewById(R.id.status);
+        txtStatus.setText(play?"Playing":"Stopped");
 	
         this.txtTitle=(TextView)this.findViewById(R.id.title);
         txtTitle.setText(" "+this.getIntent().getType());
@@ -51,9 +52,9 @@ public class SlideShowActivity extends Activity {
 	}
 
 	
-    private TextView txtSlideCounter,txtTitle;
+    private TextView txtSlideCounter,txtTitle,txtStatus;
     private ImageView imageView;
-    int i=0;
+    int i=-1;
     Integer[] imgid;
 //    int imgid[]={R.drawable.01,R.drawable.02,R.drawable.03,R.drawable.04,R.drawable.05,
   //          R.drawable.06,R.drawable.07,R.drawable.08};
@@ -70,26 +71,35 @@ public class SlideShowActivity extends Activity {
             sendMessageDelayed(obtainMessage(0), delayMillis);
         }
     };
+    private Boolean play=true;
     public void updateUI(){
-        //give first and last slides extra time
-        if(i==0 || i==imgid.length-1)
-        {
-            refreshHandler.sleep(5000);
-        }
-        else
-        {
+    	
+    	//if paused, do nothing
+    	if(!play)
+    	{
             refreshHandler.sleep(2000);
-        }
-    	imageView.setImageResource(imgid[i]);
-        txtSlideCounter.setText("Slide "+String.valueOf(i+1)+" ");
-        if(i+1<imgid.length){
-            // imageView.setPadding(left, top, right, bottom);
-            i++;
-        }
-        else
-        {
-        	i=0;
-        }
+    	}
+    	else
+    	{
+            if(i+1<imgid.length){
+                // imageView.setPadding(left, top, right, bottom);
+                i++;
+            }
+            else
+            {
+            	i=0;
+            }
+            //give first and last slides extra time
+            if(i==0 || i==imgid.length-1)
+            {
+                refreshHandler.sleep(5000);
+            }
+            else
+            {
+                refreshHandler.sleep(2000);
+            }
+			repaint();
+    	}
     }
 
 
@@ -112,8 +122,56 @@ public class SlideShowActivity extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+	public void previous(View view)
+	{
+		if(i!=0)
+		{
+			i--;
+			repaint();
+		}
+	}
+	public void next(View view)
+	{
+		if(i!=imgid.length-1)
+		{
+			i++;
+			repaint();
+		}
+	}
+	public void last(View view)
+	{
+		if(i!=imgid.length-1)
+		{
+			i=imgid.length-1;
+			repaint();
+		}
+	}
+	public void first(View view)
+	{
+		if(i!=0)
+		{
+			i=0;
+			repaint();
+		}
+	}
+	public void play(View view)
+	{
+		play=true;
+		repaint();
+	}
+	public void stop(View view)
+	{
+		play=false;
+		repaint();
+	}
 	public void exit(View view)
 	{
 		finish();
+	}
+	private void repaint()
+	{
+    	imageView.setImageResource(imgid[i]);
+        txtSlideCounter.setText("Slide "+String.valueOf(i+1)+" ");
+        txtStatus.setText(play?"Playing":"Stopped");
 	}
 }
