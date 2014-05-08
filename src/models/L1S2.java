@@ -13,6 +13,8 @@ import com.itforhumanity.itcourse_basics.R;
  * */
 
 public class L1S2 {
+	public static final String prefix="1.2";
+	public static final String title="1.2: Some friendly reminders";
 	private static ArrayList<CustomListItem> list=null;
 	public static ArrayList<CustomListItem> getLessons()
 	{

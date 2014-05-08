@@ -12,7 +12,10 @@ import com.itforhumanity.itcourse_basics.R;
  * From http://www.azlyrics.com/j/jackson.html
  * */
 
-public class L1S1 {
+public class L1S1 extends Lesson{
+	public static final String prefix="1.1";
+	public static final String title="1.1: Introducing the IT for Humanity Android Tablet IT Course";
+	
 	private static ArrayList<CustomListItem> list=null;
 	public static ArrayList<CustomListItem> getLessons()
 	{
