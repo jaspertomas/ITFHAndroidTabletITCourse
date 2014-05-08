@@ -67,8 +67,16 @@ public class SlideShowActivity extends Activity {
         }
     };
     public void updateUI(){
-        refreshHandler.sleep(2000);
-        imageView.setImageResource(imgid[i]);
+        //give first and last slides extra time
+        if(i==0 || i==imgid.length-1)
+        {
+            refreshHandler.sleep(5000);
+        }
+        else
+        {
+            refreshHandler.sleep(2000);
+        }
+    	imageView.setImageResource(imgid[i]);
         txtStatus.setText(String.valueOf(i+1));
         if(i+1<imgid.length){
             // imageView.setPadding(left, top, right, bottom);
