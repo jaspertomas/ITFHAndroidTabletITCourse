@@ -130,13 +130,16 @@ public class L1S3 {
 		
 		
 		//list.add(new CustomListItem(CustomListItem.SLIDESHOW, "Slide Show 1","l00s00p05"));
-		list.add(new CustomListItem(CustomListItem.TEXT,
-				"    Press the Tab key again. Watch the highlight move to the next app.\n" + 
-				"    Keep pressing the Tab key until the highlight is on top of the app you wish to open.\n" + 
-				"    Now let go of the Alt key. \n" + 
-				"\n" + 
-				"This will open the app that you have chosen.\n" + 
-				""));
+		String text="";
+
+		text=
+"    Press the Tab key again. Watch the highlight move to the next app.\n" + 
+"    Keep pressing the Tab key until the highlight is on top of the app you wish to open.\n" + 
+"    Now let go of the Alt key. \n" + 
+"\n" + 
+"This will open the app that you have chosen.\n" + 
+"";
+		list.add(new CustomListItem(CustomListItem.TEXT,text));
 				
 
 	}

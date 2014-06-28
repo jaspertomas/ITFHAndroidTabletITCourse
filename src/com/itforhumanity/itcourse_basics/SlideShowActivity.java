@@ -82,7 +82,7 @@ public class SlideShowActivity extends Activity {
     	else
     	{
             if(i+1<imgid.length){
-                // imageView.setPadding(left, top, right, bottom);
+                 imageView.setPadding(0, 0, 0, 10);
                 i++;
             }
             else
