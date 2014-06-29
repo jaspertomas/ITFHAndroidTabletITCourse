@@ -1,0 +1,1 @@
+This is an IT Course on a tablet, for children who cannot afford a proper IT education nor a laptop or desktop computer on which to practice on. It allows them to learn IT concepts, from file management to basic computer programming, on a cheap android tablet
