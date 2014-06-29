@@ -27,8 +27,10 @@ public class L2S1 {
 		int image=0;
 		String slideshowprefix="";
 
+		text="What is a file?";
+		list.add(new CustomListItem(CustomListItem.TITLE,text));
+		
 		text="\n" + 
-"What is a file?\n" + 
 "When you take a picture with your tablet, that picture is a file. MP3's are files. Videos are files. Documents written using a computer are files. Files are pieces of information that are stored inside a computer. And your tablet is a computer.\n" + 
 "\n" + 
 "Files have first names and last names, like people. Files have names like:\n" + 
@@ -39,7 +41,9 @@ public class L2S1 {
 "my_birthday_party.mp4\n" + 
 "index.html\n" + 
 "\n" + 
-"Their last name tells you what kind of file they are. These last names are also called 'file name extensions'. They are usually 3 letters long, like mp3, jpg, png, avi, wmv, php, etc. MP3 files are usually music. When you take pictures with your tablet, the pictures are usually JPG files. MP4, AVI and WMV files are video files. HTM, HTML and PHP files are web pages.\n" + 
+"Their last name tells you what kind of file they are. These last names are also called 'file name extensions'. They are usually 3 letters long, like mp3, jpg, png, avi, wmv, php, etc. MP3 files are usually music. "+
+"\n" + 
+"When you take pictures with your tablet, the pictures are usually JPG files. There are many other kinds of picture files, like PNG, BMP, GIF, etc. Video files or movie files can be MP4, AVI or WMV files. Web pages can be HTM, HTML and PHP.\n" + 
 "\n" + 
 "These are files "
 ;
@@ -47,7 +51,7 @@ public class L2S1 {
 				
 		list.add(new CustomListItem(CustomListItem.IMAGE,R.drawable.l02s01files,""));
 
-		text="There is a special kind of file that contains other files. It is called a Folder, also known as a Directory. Folders look like those cardboard folders you can buy in a book store. Folders usually do not have a last name.\n" + 
+		text="There is a special kind of file that contains other files. It is called a Folder, or a Directory. Folders look like those cardboard folders you can buy in a book store. They usually do not have a last name.\n" + 
 				"\n" + 
 				"This is a folder\n" + 
 				"";

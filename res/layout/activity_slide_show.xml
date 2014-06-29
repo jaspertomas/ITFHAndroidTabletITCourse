@@ -21,7 +21,7 @@
 		              android:layout_width="0dp"
 		              android:layout_weight="1"
 		              android:layout_height="wrap_content"
-					  android:textSize="30sp" 
+					  android:textSize="20sp" 
 				  	  android:gravity="center"
 		              ></TextView>
    		    <TextView android:text="0"
@@ -29,7 +29,7 @@
 		              android:layout_width="0dp"
 		              android:layout_weight="1"
 		              android:layout_height="wrap_content"
-					  android:textSize="30sp" 
+					  android:textSize="20sp" 
 					  android:gravity="center"
 		              ></TextView>
    		    <TextView android:text="Playing"
@@ -37,7 +37,7 @@
 		              android:layout_width="0dp"
 		              android:layout_weight="1"
 		              android:layout_height="wrap_content"
-					  android:textSize="30sp" 
+					  android:textSize="20sp" 
 					  android:gravity="center"
 		              ></TextView>
 	    	  

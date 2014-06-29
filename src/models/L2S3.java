@@ -29,11 +29,10 @@ public class L2S3 {
 
 		
 		//---------------------
-		text="Folders";
-		list.add(new CustomListItem(CustomListItem.TITLE,text));
-		
-		text="	Folders allow your computer to arrange your files in a neat way. There are thousands of files in your tablet, but you don't see them because they are in the other folders. Imagine if your picture was with thousands of other files. It would take hours for you to find your picture!"
-		+"In the activity earlier, we opened 3 folders to find your picture: sdcard, DCIM and Camera. Camera is your picture's 'parent folder'. DCIM is the parent of Camera, and sdcard is the parent of DCIM. It's like they are all one big family. The parent of sdcard is mnt. We did not have to go through mnt, because when we opened the File Manager, we were already inside mnt.\n" + 
+		text="Folders allow your computer to arrange your files in a neat way. There are thousands of files in your tablet, but you don't see them because they are in the other folders. Imagine if your picture was with thousands of other files. It would take hours for you to find your picture!"+
+		"\n" + 
+		"\n" + 
+		"In the activity earlier, we opened 3 folders to find your picture: sdcard, DCIM and Camera. Camera is your picture's 'parent folder'. DCIM is the parent of Camera, and sdcard is the parent of DCIM. It's like they are all one big family. The parent of sdcard is mnt. We did not have to go through mnt, because when we opened the File Manager, we were already inside mnt.\n" + 
 		"\n" + 
 		"Another way to think of the folders is by thinking that they are addresses, like the address of your home. Inside the world are different countries. Inside those are provinces, cities, streets, and houses. Notice that the address of your home contains your street, your city, and your province. For example:\n" + 
 		"\n" + 

@@ -21,6 +21,12 @@ public class Lessons {
 			L2S4.title,
 			L2S5.title,
 			L2S6.title,
+			L2S7.title,
+			L2S8.title,
+			L2S9.title,
+			L2S10.title,
+			L2S11.title,
+			L2S12.title,
 		};
 	public static ArrayList<CustomListItem> getLesson(String name)
 	{
@@ -33,6 +39,12 @@ public class Lessons {
 		else if(name.contentEquals(L2S4.title))return L2S4.getLessons();
 		else if(name.contentEquals(L2S5.title))return L2S5.getLessons();
 		else if(name.contentEquals(L2S6.title))return L2S6.getLessons();
+		else if(name.contentEquals(L2S7.title))return L2S7.getLessons();
+		else if(name.contentEquals(L2S8.title))return L2S8.getLessons();
+		else if(name.contentEquals(L2S9.title))return L2S9.getLessons();
+		else if(name.contentEquals(L2S10.title))return L2S10.getLessons();
+		else if(name.contentEquals(L2S11.title))return L2S11.getLessons();
+		else if(name.contentEquals(L2S12.title))return L2S12.getLessons();
 		else return new ArrayList<CustomListItem>();
 	}	
 

@@ -29,10 +29,6 @@ public class L2S4 {
 
 		
 		//-------------------------
-		text="The Root Folder";
-		list.add(new CustomListItem(CustomListItem.TITLE,text));
-		
-
 		text=" The parent of mnt is called the 'root folder'. It is like Adam or Eve, because it is the parent of all the files and folders. It doesn't have a name, but it is very important because all the files in your tablet are inside it. It is like 'Planet Earth'. Nobody needs to say 'Planet Earth' in their address, because everybody lives in Planet Earth.\n" + 
 				"\n" + 
 				"The address of the root folder is\n" + 

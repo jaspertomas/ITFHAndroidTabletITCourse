@@ -29,9 +29,6 @@ public class L2S2 {
 
 		
 		//--------------------------------
-		text="The File Manager";
-		list.add(new CustomListItem(CustomListItem.TITLE,text));
-
 		text="This is the File Manager app";
 		list.add(new CustomListItem(CustomListItem.TEXT,text));
 		image=R.drawable.l02s01filemgrwhere;

@@ -39,7 +39,7 @@ public class LessonActivity extends Activity {
         
         lessonname=this.getIntent().getAction();
         listitems = new ArrayList<CustomListItem>();
-        listitems.add(new CustomListItem(CustomListItem.TITLE,lessonname));
+        listitems.add(new CustomListItem(CustomListItem.TITLE,"Lesson "+lessonname));
 		listitems.addAll(Lessons.getLesson(lessonname));
         
 //		SQLiteDatabase db=MyDatabaseHelper.getInstance().getWritableDatabase();

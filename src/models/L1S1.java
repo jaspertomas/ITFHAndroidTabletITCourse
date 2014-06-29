@@ -13,7 +13,7 @@ import com.itforhumanity.itcourse_basics.R;
  * */
 
 public class L1S1{
-	public static final String title="1.1: Introducing the IT for Humanity Android Tablet IT Course";
+	public static final String title="1.1: What is IT for Humanity's Android Tablet IT Course?";
 	
 	private static ArrayList<CustomListItem> list=null;
 	public static ArrayList<CustomListItem> getLessons()

@@ -29,10 +29,6 @@ public class L2S5 {
 
 		
 		//---------------------------
-		text="Your Very Own Folder";
-		list.add(new CustomListItem(CustomListItem.TITLE,text));
-		
-		
 		text=" Now, let's create your own personal folder, where we will put your files for safe keeping. Let's call it 'myfiles'.\n" + 
 				"\n" + 
 				"    If you are still inside /mnt/sdcard/DCIM/Camera, Go to /mnt/sdcard\n" + 
