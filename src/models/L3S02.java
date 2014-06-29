@@ -12,8 +12,8 @@ import com.itforhumanity.itcourse_basics.R;
  * From http://www.azlyrics.com/j/jackson.html
  * */
 
-public class L2S13 {
-	public static final String title="2.10: Working with Folders";
+public class L3S02 {
+	public static final String title="3.2: Text Editors";
 	private static ArrayList<CustomListItem> list=null;
 	public static ArrayList<CustomListItem> getLessons()
 	{
@@ -28,12 +28,17 @@ public class L2S13 {
 		String slideshowprefix="";
 
 		//-------------------------
-		text="Working with Folders";
-		list.add(new CustomListItem(CustomListItem.TITLE,text));
-		
-		text="";
+		text="A program for writing text files is called a text editor.\n" + 
+		"\n" + 
+		"There are many apps that can be used to edit files in an android tablet. The one I recommend is Jota+.";
 		list.add(new CustomListItem(CustomListItem.TEXT,text));
 		
+		image=R.drawable.l03s01jota1;
+		list.add(new CustomListItem(CustomListItem.IMAGE,image,""));
+		
+		image=R.drawable.l03s01jota2;
+		list.add(new CustomListItem(CustomListItem.IMAGE,image,""));
+
 		
 		
 	}

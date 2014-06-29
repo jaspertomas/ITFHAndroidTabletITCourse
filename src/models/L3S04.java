@@ -12,8 +12,8 @@ import com.itforhumanity.itcourse_basics.R;
  * From http://www.azlyrics.com/j/jackson.html
  * */
 
-public class L2S14 {
-	public static final String title="2.10: Working with Folders";
+public class L3S04 {
+	public static final String title="3.4: Know your keyboard";
 	private static ArrayList<CustomListItem> list=null;
 	public static ArrayList<CustomListItem> getLessons()
 	{
@@ -28,11 +28,12 @@ public class L2S14 {
 		String slideshowprefix="";
 
 		//-------------------------
-		text="Working with Folders";
-		list.add(new CustomListItem(CustomListItem.TITLE,text));
-		
-		text="";
+		text="Before we start typing, let's get to know our keyboard.";
 		list.add(new CustomListItem(CustomListItem.TEXT,text));
+		
+		image=R.drawable.l03s01keyboard;
+		list.add(new CustomListItem(CustomListItem.IMAGE,image,""));
+		
 		
 		
 		
