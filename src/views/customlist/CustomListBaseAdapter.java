@@ -4,8 +4,14 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,8 +43,9 @@ public class CustomListBaseAdapter extends BaseAdapter {
 
 	int screenwidth;
 	int screenheight;			
+	Context context;
 	public CustomListBaseAdapter(Context context, ArrayList<CustomListItem> results) {
-//		this.context=(TimedActivity)context;
+		this.context=context;
 		itemDetailsArrayList = results;
 		l_Inflater = LayoutInflater.from(context);
 		
@@ -73,8 +80,6 @@ public class CustomListBaseAdapter extends BaseAdapter {
 			holder.image = (ImageView) convertView.findViewById(R.id.image);
 			holder.slideshow = (Button) convertView.findViewById(R.id.slideshow);
 			holder.textbox = (EditText) convertView.findViewById(R.id.textbox);
-
-			
 			
 			convertView.setTag(holder);
 		} else {
@@ -107,30 +112,60 @@ public class CustomListBaseAdapter extends BaseAdapter {
 		{
 			//holder.image
 			holder.image.setVisibility(TextView.VISIBLE);
+
+			//onclick
+//			holder.image.setOnClickListener(new View.OnClickListener() {
+//		        @Override
+//		        public void onClick(View v) {
+//		        	Log.i("a","b");
+//		        }
+//		    });			
 			
             Drawable image = MenuActivity.getInstance().getResources().getDrawable(item.getResourceId());
-            float heighToWidthRatio = image.getIntrinsicWidth()/image.getIntrinsicHeight();
-            int height = Double.valueOf(0.9d*screenheight).intValue();
+//            Drawable d=null;
+            
+            Double heighToWidthRatio = Double.valueOf(image.getIntrinsicWidth())/image.getIntrinsicHeight();
+            int height = Double.valueOf(0.8d*screenheight).intValue();
 
             Double widthToHeightRatio = Double.valueOf(image.getIntrinsicHeight())/image.getIntrinsicWidth();
-            int width = Double.valueOf(0.9d*screenwidth).intValue();
+            int width = Double.valueOf(0.8d*screenwidth).intValue();
+            
+//            Log.i("imagewidth",String.valueOf(image.getIntrinsicWidth()));
+//            Log.i("imageheight",String.valueOf(image.getIntrinsicHeight()));
+//            Log.i("screenwidth",String.valueOf(screenwidth));
+//            Log.i("screenheight",String.valueOf(screenheight));
+//            Log.i("width",String.valueOf(width));
+//            Log.i("height",String.valueOf(height));
+//            Log.i("(widthToHeightRatio)",String.valueOf((widthToHeightRatio)));
+//            Log.i("(heighToWidthRatio)",String.valueOf((heighToWidthRatio)));
+//            Log.i("(width * widthToHeightRatio)",String.valueOf((width * widthToHeightRatio)));
+//            Log.i("(height * heighToWidthRatio)",String.valueOf((height * heighToWidthRatio)));
+//            Log.i("(height * widthToHeightRatio)",String.valueOf((height * widthToHeightRatio)));
+//            Log.i("(width * heighToWidthRatio)",String.valueOf((width * heighToWidthRatio)));
             
             if((width * widthToHeightRatio)<height)
             {
             	holder.image.setLayoutParams(
                         new LayoutParams(
                         		width, (int) (width * widthToHeightRatio)));			
+
+//    			Bitmap b = Bitmap.createScaledBitmap(drawableToBitmap(image), width, Double.valueOf(width * widthToHeightRatio).intValue(), false);
+//    			d = new BitmapDrawable(context.getResources(), b);
             }
             else
             {
                 holder.image.setLayoutParams(
                         new LayoutParams(
                                 (int) (height * heighToWidthRatio), height));			
+
+//    			Bitmap b = Bitmap.createScaledBitmap(drawableToBitmap(image), Double.valueOf(height * heighToWidthRatio).intValue(), height, false);
+//    			d = new BitmapDrawable(context.getResources(), b);
             }
 
-            
-            
-			holder.image.setImageDrawable(image);
+            holder.image.setImageDrawable(image);
+//			holder.image.setImageDrawable(scaleBitmap(image, width, height));
+//			holder.image.setImageDrawable(d);
+			
 			holder.text.setVisibility(TextView.VISIBLE);
 			holder.text.setText(item.getText());
 		}
@@ -205,6 +240,35 @@ public class CustomListBaseAdapter extends BaseAdapter {
 	private boolean checkboxClickable=true;
 	public void setCheckboxClickable(boolean checkboxClickable) {
 		this.checkboxClickable = checkboxClickable;
+	}
+	public static Bitmap scaleBitmap(Bitmap bitmapToScale, float newWidth, float newHeight) {   
+		if(bitmapToScale == null)
+		    return null;
+		//get the original width and height
+		int width = bitmapToScale.getWidth();
+		int height = bitmapToScale.getHeight();
+		// create a matrix for the manipulation
+		Matrix matrix = new Matrix();
+
+		// resize the bit map
+		matrix.postScale(newWidth / width, newHeight / height);
+
+		// recreate the new Bitmap and set it back
+		return Bitmap.createBitmap(bitmapToScale, 0, 0, bitmapToScale.getWidth(), bitmapToScale.getHeight(), matrix, true);  
+	}	
+
+	//from http://stackoverflow.com/questions/3035692/how-to-convert-a-drawable-to-a-bitmap
+	public static Bitmap drawableToBitmap (Drawable drawable) {
+	    if (drawable instanceof BitmapDrawable) {
+	        return ((BitmapDrawable)drawable).getBitmap();
+	    }
+	
+	    Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Config.ARGB_8888);
+	    Canvas canvas = new Canvas(bitmap); 
+	    drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+	    drawable.draw(canvas);
+	
+	    return bitmap;
 	}
 	
 }
