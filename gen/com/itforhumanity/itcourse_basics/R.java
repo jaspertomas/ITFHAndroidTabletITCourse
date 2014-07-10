@@ -283,7 +283,10 @@ public final class R {
         public static final int l03s01smile=0x7f020103;
         public static final int l03s01textfiles=0x7f020104;
         public static final int l03s01yourfirsttextfile=0x7f020105;
-        public static final int texteditborder=0x7f020106;
+        public static final int l04s01helloworld1=0x7f020106;
+        public static final int l04s01helloworld2=0x7f020107;
+        public static final int l04s01helloworld3=0x7f020108;
+        public static final int texteditborder=0x7f020109;
     }
     public static final class id {
         public static final int action_settings=0x7f080012;
