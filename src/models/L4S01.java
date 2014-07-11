@@ -132,6 +132,20 @@ public class L4S01 {
 				"";
 		list.add(new CustomListItem(CustomListItem.TEXT,text));
 		
+		text="Play around with HTML Play";
+		list.add(new CustomListItem(CustomListItem.TITLE,text));
+						
+		text="Go ahead and experiment with HTML. Change the font size to 1, 2, 3, all the way to 10. See what happens.\n\n" +
+		"Change the font color to yellow, green, pink, blue, gray, black and white, lightblue (notice that there is no space between light and blue), and any other color you can think of.\n\n" +
+		"Finally, paste this into HTML Play: ";
+		list.add(new CustomListItem(CustomListItem.TEXT,text));
+			
+		text="<font color=red size=7>Hello </font><font color=blue size=6>world!</font>"; 
+		list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=800"));
+		
+		text="What do you see?";
+		list.add(new CustomListItem(CustomListItem.TEXT,text));
+			
 		
 		
 	}

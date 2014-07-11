@@ -1,0 +1,4 @@
+;
+				list.add(new CustomListItem(CustomListItem.TEXT,text));
+								
+				text=
