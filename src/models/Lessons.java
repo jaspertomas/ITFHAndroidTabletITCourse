@@ -33,6 +33,7 @@ public class Lessons {
 			L3S04.title,
 			L3S05.title,
 			L4S01.title,
+			L4S02.title,
 		};
 	public static ArrayList<CustomListItem> getLesson(String name)
 	{
@@ -57,6 +58,7 @@ public class Lessons {
 		else if(name.contentEquals(L3S04.title))return L3S04.getLessons();
 		else if(name.contentEquals(L3S05.title))return L3S05.getLessons();
 		else if(name.contentEquals(L4S01.title))return L4S01.getLessons();
+		else if(name.contentEquals(L4S02.title))return L4S02.getLessons();
 		else return new ArrayList<CustomListItem>();
 	}	
 

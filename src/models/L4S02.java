@@ -42,11 +42,26 @@ public class L4S02 {
 		list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=400"));
 		*/
 		
-		/*
-More on fonts
 
-You can also change the style, or "Font", of your letters. Microsoft Word lets you choose from a lot of fonts. These are some of the fonts that are available in Android:
 
+
+
+	text="More on Fonts";
+	list.add(new CustomListItem(CustomListItem.TITLE,text));
+	
+	text="You can also change the style, or \"Font\", of your letters. Microsoft Word lets you choose from a lot of fonts. These are some of the fonts that are available in Android:";
+	list.add(new CustomListItem(CustomListItem.TEXT,text));
+			
+	image=R.drawable.l04s02monospace;
+	list.add(new CustomListItem(CustomListItem.IMAGE,image,""));
+			
+	image=R.drawable.l04s02serif;
+	list.add(new CustomListItem(CustomListItem.IMAGE,image,""));
+			
+	image=R.drawable.l04s02sansserif;
+	list.add(new CustomListItem(CustomListItem.IMAGE,image,""));
+			
+	/*
 _________________
 _________________
 _________________
