@@ -286,10 +286,12 @@ public final class R {
         public static final int l04s01helloworld1=0x7f020106;
         public static final int l04s01helloworld2=0x7f020107;
         public static final int l04s01helloworld3=0x7f020108;
-        public static final int l04s02monospace=0x7f020109;
-        public static final int l04s02sansserif=0x7f02010a;
-        public static final int l04s02serif=0x7f02010b;
-        public static final int texteditborder=0x7f02010c;
+        public static final int l04s02bold=0x7f020109;
+        public static final int l04s02bolditalicunderline=0x7f02010a;
+        public static final int l04s02fonts=0x7f02010b;
+        public static final int l04s02italics=0x7f02010c;
+        public static final int l04s02underline=0x7f02010d;
+        public static final int texteditborder=0x7f02010e;
     }
     public static final class id {
         public static final int action_settings=0x7f080012;

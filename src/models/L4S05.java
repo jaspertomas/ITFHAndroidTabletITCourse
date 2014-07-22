@@ -13,7 +13,7 @@ import com.itforhumanity.itcourse_basics.R;
  * */
 
 public class L4S05 {
-	public static final String title="4.1: Introduction to HTML";
+	public static final String title="4.5: Line Breaks";
 	private static ArrayList<CustomListItem> list=null;
 	public static ArrayList<CustomListItem> getLessons()
 	{
@@ -41,6 +41,47 @@ public class L4S05 {
 		text="<font color=red size=7>Hello world!</font>"; 
 		list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=400"));
 		*/
+		
+
+
+
+
+
+	//--Line Breaks---
+	text="Line Breaks";
+	list.add(new CustomListItem(CustomListItem.TITLE,text));
+	
+	text="In Microsoft Word, if you want to go down the page and start typing on a new line, you press the Enter key. The Enter key creates what is called a \"Line Break\".\n" + 
+			"\n" + 
+			"In HTML, we use the <BR> tag to move words to the next line. BR is short for \"break\"\n" + 
+			"\n" + 
+			"Paste this code into HTML Play:";
+	list.add(new CustomListItem(CustomListItem.TEXT,text));
+			
+	text="Hello <br> World!"; 
+	list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=800"));
+		
+	text="This moves the word \"World\" on to the line below Hello.\n" + 
+			"\n" + 
+			"Try this:";
+	list.add(new CustomListItem(CustomListItem.TEXT,text));
+			
+	text="Hello <br><br> World!"; 
+	list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=800"));
+
+	text="and this:";
+	list.add(new CustomListItem(CustomListItem.TEXT,text));
+
+	text="Hello \n" + 
+			"<br>\n" + 
+			"<br> \n" + 
+			"World!" + 
+			""; 
+	list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=800"));
+
+	text="They give you exactly the same result, right? That's because line breaks inside the code do not affect the result. They don't do anything except make the code look cleaner and more orderly for you, the programmer.";
+	list.add(new CustomListItem(CustomListItem.TEXT,text));
+
 		
 	}
 
