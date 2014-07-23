@@ -51,9 +51,15 @@ public class L4S05 {
 	text="Line Breaks";
 	list.add(new CustomListItem(CustomListItem.TITLE,text));
 	
-	text="In Microsoft Word, if you want to go down the page and start typing on a new line, you press the Enter key. The Enter key creates what is called a \"Line Break\".\n" + 
+	text="In Jota+ or any other text editor, if you want to go down the page and start typing on a new line, you press the Enter key. The Enter key creates what is called a \"Line Break\".\n" + 
 			"\n" + 
-			"In HTML, we use the <BR> tag to move words to the next line. BR is short for \"break\"\n" + 
+			"To better understand what a line break is, click on the box below and type your first name. Then press the Enter Key 2 times, and type your last name. Notice that your last name is 2 lines below your first name. That is because you put 2 line breaks between your first name and last name.";
+	list.add(new CustomListItem(CustomListItem.TEXT,text));
+
+	text=""; 
+	list.add(new CustomListItem(CustomListItem.TEXTBOX,text,"h=100,w=800"));
+	
+	text="In HTML, we use the <BR> tag to move words to the next line. BR is short for \"break\"\n" + 
 			"\n" + 
 			"Paste this code into HTML Play:";
 	list.add(new CustomListItem(CustomListItem.TEXT,text));
