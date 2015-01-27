@@ -291,7 +291,11 @@ public final class R {
         public static final int l04s02fonts=0x7f02010b;
         public static final int l04s02italics=0x7f02010c;
         public static final int l04s02underline=0x7f02010d;
-        public static final int texteditborder=0x7f02010e;
+        public static final int l04s09olx=0x7f02010e;
+        public static final int l04s09table=0x7f02010f;
+        public static final int l04s09tablebigborder=0x7f020110;
+        public static final int l04s09tablenoborder=0x7f020111;
+        public static final int texteditborder=0x7f020112;
     }
     public static final class id {
         public static final int action_settings=0x7f080012;
